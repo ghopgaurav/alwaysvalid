@@ -1,0 +1,12 @@
+{
+  "name": "alwaysvalid",
+  "version": "0.1.0",
+  "description": "A sequential A/B calculator that ships the A/A simulation proving why peeking at a fixed-horizon test breaks it.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node src/demo.ts"
+  }
+}
