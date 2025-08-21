@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare fixed-horizon and always-valid evidence while the experiment is still running.">
+  <title>Always Valid · Working Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+  <header class="masthead"><a class="brand" href="https://github.com/ghopgaurav/alwaysvalid">Always Valid</a><span class="build-state"><i></i> live computation</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Sequential A/B decision</p>
+      <h1>Run the decision,<br><em>inspect the evidence.</em></h1>
+      <p class="lede">Compare fixed-horizon and always-valid evidence while the experiment is still running.</p>
+    </section>
+    <section class="workspace" aria-label="Interactive project workspace">
+      <form id="workspace-form" class="control-panel">
+        <div class="panel-heading"><span>01</span><div><p>Inputs</p><h2>Configure the run</h2></div></div>
+        <div class="fields"><label class="field" for="controlVisitors"><span>Control visitors</span><input id="controlVisitors" name="controlVisitors" type="number" value="5000" min="50" max="100000" step="any" data-suggested-step="1"></label>
+<label class="field" for="controlConversions"><span>Control conversions</span><input id="controlConversions" name="controlConversions" type="number" value="510" min="0" max="100000" step="any" data-suggested-step="1"></label>
+<label class="field" for="variantVisitors"><span>Variant visitors</span><input id="variantVisitors" name="variantVisitors" type="number" value="5000" min="50" max="100000" step="any" data-suggested-step="1"></label>
+<label class="field" for="variantConversions"><span>Variant conversions</span><input id="variantConversions" name="variantConversions" type="number" value="600" min="0" max="100000" step="any" data-suggested-step="1"></label>
+<label class="field" for="alpha"><span>False-positive budget</span><input id="alpha" name="alpha" type="number" value="0.05" min="0.001" max="0.2" step="any" data-suggested-step="0.001"></label>
+<label class="field" for="looks"><span>Interim looks</span><input id="looks" name="looks" type="number" value="8" min="1" max="100" step="any" data-suggested-step="1"></label></div>
+        <div class="actions"><button class="run" type="submit">Run analysis <span>→</span></button><button id="reset-button" class="reset" type="button">Reset</button></div>
+      </form>
+      <section id="results" class="result-panel" aria-live="polite" aria-busy="true">
+        <div class="panel-heading"><span>02</span><div><p>Output</p><h2>Decision trace</h2></div></div>
+        <div id="result-content" class="result-content"><div class="loading">Computing initial scenario…</div></div>
+      </section>
+    </section>
+  </main>
+  <footer><p>Built from the tested logic in <a href="https://github.com/ghopgaurav/alwaysvalid">ghopgaurav/alwaysvalid</a>.</p></footer>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
